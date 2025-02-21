@@ -8,5 +8,5 @@ void main() {
     baseUrl: ApiUrls.baseUrlStaging,
     name: 'staging',
   );
-  bootstrap(() => const App());
+  bootstrap(() =>  App());
 }

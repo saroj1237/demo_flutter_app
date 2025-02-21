@@ -4,11 +4,13 @@ import 'package:demo_flutter_app/features/authentication/login/domain/models/log
 import 'package:demo_flutter_app/features/authentication/login/domain/usecases/login_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
+@injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final LoginUseCase loginUseCase;
   LoginBloc(this.loginUseCase) : super(const _Initial()) {

@@ -8,5 +8,5 @@ void main() {
     baseUrl: ApiUrls.baseUrlDevelopment,
     name: 'development',
   );
-  bootstrap(() => const App());
+  bootstrap(() =>  App());
 }

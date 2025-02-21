@@ -13,6 +13,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../app/blocs/auth_cubit/auth_cubit.dart' as _i481;
 import '../../features/authentication/login/data/data_source/local_data_source.dart'
     as _i172;
 import '../../features/authentication/login/data/data_source/remote_data_source.dart'
@@ -23,6 +24,8 @@ import '../../features/authentication/login/domain/repository/login_repository.d
     as _i403;
 import '../../features/authentication/login/domain/usecases/login_usecase.dart'
     as _i532;
+import '../../features/authentication/login/presentation/login_bloc/login_bloc.dart'
+    as _i277;
 import '../network/api_service.dart' as _i921;
 import '../network/dio_interceptiors.dart' as _i612;
 import 'injection.dart' as _i464;
@@ -53,6 +56,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i361.Dio>(),
           gh<_i460.SharedPreferences>(),
         ));
+    gh.factory<_i481.AuthCubit>(
+        () => _i481.AuthCubit(gh<_i460.SharedPreferences>()));
     gh.lazySingleton<_i971.RemoteDataSource>(
         () => _i971.RemoteDataSourceImpl(gh<_i921.ApiService>()));
     gh.lazySingleton<_i403.LoginRepository>(() => _i352.LoginRepositoryImpl(
@@ -61,6 +66,8 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.lazySingleton<_i532.LoginUseCase>(
         () => _i532.LoginUseCase(gh<_i403.LoginRepository>()));
+    gh.factory<_i277.LoginBloc>(
+        () => _i277.LoginBloc(gh<_i532.LoginUseCase>()));
     return this;
   }
 }
