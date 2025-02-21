@@ -2,6 +2,7 @@ import 'package:demo_flutter_app/core/exceptions/failures.dart';
 import 'package:demo_flutter_app/core/exceptions/network_exceptions.dart';
 import 'package:demo_flutter_app/features/authentication/login/data/data_source/local_data_source.dart';
 import 'package:demo_flutter_app/features/authentication/login/data/data_source/remote_data_source.dart';
+import 'package:demo_flutter_app/features/authentication/login/domain/models/login_request.dart';
 import 'package:demo_flutter_app/features/authentication/login/domain/models/login_response.dart';
 import 'package:demo_flutter_app/features/authentication/login/domain/repository/login_repository.dart';
 import 'package:fpdart/fpdart.dart';
@@ -14,11 +15,10 @@ class LoginRepositoryImpl implements LoginRepository {
   final RemoteDataSource remoteDataSource;
   @override
   Future<Either<Failure, LoginResponse>> login(
-    String username,
-    String password,
+    LoginRequest request,
   ) async {
     try {
-      final loginResponse = await remoteDataSource.login(username, password);
+      final loginResponse = await remoteDataSource.login(request);
       return right(loginResponse);
     } catch (e) {
       return left(

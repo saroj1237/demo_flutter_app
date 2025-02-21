@@ -20,7 +20,15 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginResponse {
-  String get token => throw _privateConstructorUsedError;
+  String get accessToken => throw _privateConstructorUsedError;
+  String get refreshToken => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   /// Serializes this LoginResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +46,16 @@ abstract class $LoginResponseCopyWith<$Res> {
           LoginResponse value, $Res Function(LoginResponse) then) =
       _$LoginResponseCopyWithImpl<$Res, LoginResponse>;
   @useResult
-  $Res call({String token});
+  $Res call(
+      {String accessToken,
+      String refreshToken,
+      int id,
+      String username,
+      String email,
+      String firstName,
+      String lastName,
+      String gender,
+      String image});
 }
 
 /// @nodoc
@@ -56,12 +73,52 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = null,
+    Object? accessToken = null,
+    Object? refreshToken = null,
+    Object? id = null,
+    Object? username = null,
+    Object? email = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? gender = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
+      accessToken: null == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -75,7 +132,16 @@ abstract class _$$LoginResponseImplCopyWith<$Res>
       __$$LoginResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String token});
+  $Res call(
+      {String accessToken,
+      String refreshToken,
+      int id,
+      String username,
+      String email,
+      String firstName,
+      String lastName,
+      String gender,
+      String image});
 }
 
 /// @nodoc
@@ -91,12 +157,52 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = null,
+    Object? accessToken = null,
+    Object? refreshToken = null,
+    Object? id = null,
+    Object? username = null,
+    Object? email = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? gender = null,
+    Object? image = null,
   }) {
     return _then(_$LoginResponseImpl(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
+      accessToken: null == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -105,17 +211,42 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LoginResponseImpl implements _LoginResponse {
-  const _$LoginResponseImpl({required this.token});
+  const _$LoginResponseImpl(
+      {required this.accessToken,
+      required this.refreshToken,
+      required this.id,
+      required this.username,
+      required this.email,
+      required this.firstName,
+      required this.lastName,
+      required this.gender,
+      required this.image});
 
   factory _$LoginResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoginResponseImplFromJson(json);
 
   @override
-  final String token;
+  final String accessToken;
+  @override
+  final String refreshToken;
+  @override
+  final int id;
+  @override
+  final String username;
+  @override
+  final String email;
+  @override
+  final String firstName;
+  @override
+  final String lastName;
+  @override
+  final String gender;
+  @override
+  final String image;
 
   @override
   String toString() {
-    return 'LoginResponse(token: $token)';
+    return 'LoginResponse(accessToken: $accessToken, refreshToken: $refreshToken, id: $id, username: $username, email: $email, firstName: $firstName, lastName: $lastName, gender: $gender, image: $image)';
   }
 
   @override
@@ -123,12 +254,26 @@ class _$LoginResponseImpl implements _LoginResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginResponseImpl &&
-            (identical(other.token, token) || other.token == token));
+            (identical(other.accessToken, accessToken) ||
+                other.accessToken == accessToken) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, token);
+  int get hashCode => Object.hash(runtimeType, accessToken, refreshToken, id,
+      username, email, firstName, lastName, gender, image);
 
   /// Create a copy of LoginResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -147,14 +292,38 @@ class _$LoginResponseImpl implements _LoginResponse {
 }
 
 abstract class _LoginResponse implements LoginResponse {
-  const factory _LoginResponse({required final String token}) =
-      _$LoginResponseImpl;
+  const factory _LoginResponse(
+      {required final String accessToken,
+      required final String refreshToken,
+      required final int id,
+      required final String username,
+      required final String email,
+      required final String firstName,
+      required final String lastName,
+      required final String gender,
+      required final String image}) = _$LoginResponseImpl;
 
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$LoginResponseImpl.fromJson;
 
   @override
-  String get token;
+  String get accessToken;
+  @override
+  String get refreshToken;
+  @override
+  int get id;
+  @override
+  String get username;
+  @override
+  String get email;
+  @override
+  String get firstName;
+  @override
+  String get lastName;
+  @override
+  String get gender;
+  @override
+  String get image;
 
   /// Create a copy of LoginResponse
   /// with the given fields replaced by the non-null parameter values.

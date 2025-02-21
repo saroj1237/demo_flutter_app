@@ -62,14 +62,15 @@ class NetworkExceptions with _$NetworkExceptions {
             case DioExceptionType.badResponse:
               switch (error.response!.statusCode) {
                 case 400:
-                  networkException = const NetworkExceptions.badRequest(
-                     'Error Occured with status 400',
+                  networkException = NetworkExceptions.badRequest(
+                    error.response?.data['message'] as String? ??
+                        'Error Occured with status 400',
                   );
 
                 case 401:
-                  networkException =
-                      const NetworkExceptions.unauthorisedRequest(
-                    'Error Occured with status 401',
+                  networkException = NetworkExceptions.unauthorisedRequest(
+                    error.response?.data['message'] as String? ??
+                        'Error Occured with status 401',
                   );
                 case 403:
                   networkException =

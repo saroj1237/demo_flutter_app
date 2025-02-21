@@ -14,10 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+LoginRequest _$LoginRequestFromJson(Map<String, dynamic> json) {
+  return _LoginRequest.fromJson(json);
+}
+
 /// @nodoc
 mixin _$LoginRequest {
   String get username => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+
+  /// Serializes this LoginRequest to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of LoginRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -107,9 +114,12 @@ class __$$LoginRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LoginRequestImpl implements _LoginRequest {
   const _$LoginRequestImpl({required this.username, required this.password});
+
+  factory _$LoginRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoginRequestImplFromJson(json);
 
   @override
   final String username;
@@ -132,6 +142,7 @@ class _$LoginRequestImpl implements _LoginRequest {
                 other.password == password));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, username, password);
 
@@ -142,12 +153,22 @@ class _$LoginRequestImpl implements _LoginRequest {
   @pragma('vm:prefer-inline')
   _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith =>
       __$$LoginRequestImplCopyWithImpl<_$LoginRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoginRequestImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _LoginRequest implements LoginRequest {
   const factory _LoginRequest(
       {required final String username,
       required final String password}) = _$LoginRequestImpl;
+
+  factory _LoginRequest.fromJson(Map<String, dynamic> json) =
+      _$LoginRequestImpl.fromJson;
 
   @override
   String get username;

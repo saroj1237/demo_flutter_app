@@ -41,7 +41,7 @@ class ApiService {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await dio.get<Response<dynamic>>(uri,
+      final response = await dio.get(uri,
           cancelToken: cancelToken,
           onReceiveProgress: onReceiveProgress,
           options: options,
@@ -63,7 +63,7 @@ class ApiService {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await dio.post<Response<dynamic>>(uri,
+      final response = await dio.post(uri,
           data: data,
           onSendProgress: onSendProgress,
           cancelToken: cancelToken,

@@ -52,6 +52,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i612.ErrorHandlerInterceptor(gh<_i460.SharedPreferences>()));
     gh.factory<_i612.TokenInterceptor>(
         () => _i612.TokenInterceptor(gh<_i460.SharedPreferences>()));
+    gh.lazySingleton<_i172.LocalDataSource>(() => _i172.LocalDataSourceImpl());
     gh.factory<_i921.ApiService>(() => _i921.ApiService(
           gh<_i361.Dio>(),
           gh<_i460.SharedPreferences>(),

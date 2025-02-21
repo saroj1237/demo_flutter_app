@@ -12,8 +12,9 @@ part 'auth_cubit.freezed.dart';
 class AuthCubit extends Cubit<AuthState> {
   final SharedPreferences sp;
   AuthCubit(this.sp) : super(const AuthState.initial());
-  void checkAuthStatus() {
-    final token = sp.getString('token');
+  Future<void> checkAuthStatus() async {
+    final token = await sp
+        .getString('token'); //Don't remove the await keyword, it's important :)
     if (token != null) {
       emit(const AuthState.authenticated());
     } else {
