@@ -1,13 +1,9 @@
 import 'package:demo_flutter_app/app/app.dart';
-import 'package:demo_flutter_app/app/blocs/auth_cubit/auth_cubit.dart';
-import 'package:demo_flutter_app/core/dependency_injection/injection.dart';
 import 'package:demo_flutter_app/features/authentication/login/presentation/pages/login_page.dart';
 import 'package:demo_flutter_app/features/counter/counter.dart';
-import 'package:demo_flutter_app/features/home/home_view.dart';
-import 'package:demo_flutter_app/features/home/landing_page.dart';
-import 'package:dio/dio.dart';
+import 'package:demo_flutter_app/features/products/presentation/pages/products_view.dart';
+import 'package:demo_flutter_app/features/products/landing_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -35,17 +31,18 @@ GoRouter router = GoRouter(
       },
       branches: [
         StatefulShellBranch(
+          navigatorKey: _shellNavigatorAKey,
           routes: [
-            // HOME
+            // Products
             GoRoute(
               path: AppRoutes.home,
               pageBuilder: (context, state) => const NoTransitionPage(
-                child: HomeView(),
+                child: ProductsView(),
               ),
             ),
           ],
         ),
-        // POSTS
+        // Counter
         StatefulShellBranch(
           navigatorKey: _shellNavigatorBKey,
           routes: [

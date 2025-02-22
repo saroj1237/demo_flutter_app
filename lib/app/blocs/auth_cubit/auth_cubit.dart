@@ -1,5 +1,6 @@
-import 'package:demo_flutter_app/core/dependency_injection/injection.dart';
-import 'package:flutter/material.dart';
+import 'dart:developer';
+
+import 'package:demo_flutter_app/core/local_storage/local_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -10,11 +11,12 @@ part 'auth_cubit.freezed.dart';
 
 @injectable
 class AuthCubit extends Cubit<AuthState> {
-  final SharedPreferences sp;
-  AuthCubit(this.sp) : super(const AuthState.initial());
+  final LocalStorage localStorage;
+  AuthCubit(this.localStorage) : super(const AuthState.initial());
   Future<void> checkAuthStatus() async {
-    final token = await sp
-        .getString('token'); //Don't remove the await keyword, it's important :)
+    final token = await localStorage
+        .getAccessToken(); //Don't remove the await keyword, it's important :)
+    log(token.toString());
     if (token != null) {
       emit(const AuthState.authenticated());
     } else {

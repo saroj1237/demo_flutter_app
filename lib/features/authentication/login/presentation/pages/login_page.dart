@@ -55,6 +55,8 @@ class LoginPage extends StatelessWidget {
                   TextFormField(
                     controller: passwordController,
                     decoration: const InputDecoration(labelText: 'Password'),
+                    // For form validation use Formz or make custom mixin class,
+                    // for now, I am using simple
                     validator: (value) => value == null || value.isEmpty
                         ? 'Password is required'
                         : null,
