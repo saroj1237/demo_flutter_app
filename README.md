@@ -174,3 +174,22 @@ Alternatively, run `flutter run` and code generation will take place automatical
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
+
+### Login Credentials:
+    username: emilys
+    password: emilyspass
+
+    usename: michaelw
+    password: michaelwpass
+
+
+### Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.24.5, on macOS 15.2 24C101 darwin-arm64, locale en-NP)
+[✓] Android toolchain - develop for Android devices (Android SDK version 35.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 16.1)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2024.2)
+[✓] IntelliJ IDEA Community Edition (version 2024.3.2.1)
+[✓] VS Code (version 1.97.2)
+[✓] Connected device (4 available)
+[✓] Network resources
